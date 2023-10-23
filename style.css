@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /*Variavél da cor*/
+    --hue: 194;
+
+    --bg-color:hsl(var(--hue), 5%, 7%);
+    --text-color: hsl(var(--hue), 40%, 98%);
+
+    --primary-color:hsl(var(--hue), 100%, 63%);
+    --controls-bg-color:hsl(var(--hue), 0%, 14%);
+    --button-secondary: hsl(var(--hue), 40%, 98%);
+
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+/******** Configuração Light mode ********/
+
+html.light{
+    --bg-color: hsl(var(--hue), 40%, 98%);
+    --text-color:hsl(var(--hue), 5%, 7%);
+    --controls-bg-color:hsl(var(--hue), 0%, 14%);
+}
+
+/*Troca logo do sol e lua para darkmode*/
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+    display: none;
+}
+
+#toggle-mode{
+    position: absolute;
+    right: 3.2rem;
+    top:3.2rem;
+
+    line-height: 0;
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    /* Centralizar ao meio */
+    display: grid;
+    height: 100vh;
+    place-content: center;
+
+}
+
+
+#app{
+
+    /*Centralizar conteudo ao meio*/
+    display: grid;
+    justify-items: center;
+}
+
+.flex{
+    display: flex;
+}
+
+/******** Configuração Timer ********/
+#timer{
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+
+/******** Configuração Controls ********/
+#controls {
+    margin-top: 1.6rem;
+    padding: 2.2rem 4rem;
+    gap: 1.6rem;
+
+    border-radius: 6.0rem;
+
+    background-color: var(--controls-bg-color);
+}
+
+/******** Configuração Botão ********/
+button{
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+
+    cursor: pointer;
+    font-size:6.4rem ;
+}
+
+/******** Configuração cor secondaria ********/
+.secondaryColor {
+    color: var(--button-secondary);
+}
+
+
+/******** Configuração CONTROLES ********/
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+    display: none;
+}
